@@ -145,7 +145,7 @@ class HomeState extends State<Home> {
               onSubmitted: (text) {
                 //当用户指示他们已经完成编辑字段中的文本时调用。
                 print('onSubmitted:${text}');
-              },
+              }, 
             ),
           ),
           new TextField(
@@ -167,7 +167,7 @@ class HomeState extends State<Home> {
               ),
             ],
           ),
-          
+
         ],
       )),
     );
