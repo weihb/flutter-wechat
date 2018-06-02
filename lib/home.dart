@@ -61,7 +61,7 @@ class HomeState extends State<Home> {
             setState(() {
               _currentIndex = index;
             });
-            print('index:${index}');
+            print('index: $index');
           },
           items: [
             new BottomNavigationBarItem(
@@ -140,21 +140,21 @@ class HomeState extends State<Home> {
               decoration: const InputDecoration(labelText: '手机号'),
               onChanged: (text) {
                 //当正在编辑的文本改变时调用。
-                print('onChanged:${text}');
+                print('onChanged:$text');
               },
               onSubmitted: (text) {
                 //当用户指示他们已经完成编辑字段中的文本时调用。
-                print('onSubmitted:${text}');
+                print('onSubmitted:$text');
               }, 
             ),
           ),
           new TextField(
             decoration: const InputDecoration(labelText: '密码'),
             onChanged: (text) {
-              print('onChanged:${text}');
+              print('onChanged:$text');
             },
             onSubmitted: (text) {
-              print('onSubmitted:${text}');
+              print('onSubmitted:$text');
             },
           ),
           new Stack(
