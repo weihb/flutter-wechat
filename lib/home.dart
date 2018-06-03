@@ -139,12 +139,12 @@ class HomeState extends State<Home> {
               describe: 'Flutter应用的异步模型',
             ),
              new ItemWidget(
-              title: '样式',
-              describe: '管理应用的主题，使应用能够响应式的适应屏幕尺寸或添加填充。',
+              title: '滚动',
+              describe: '滚动一个拥有多个子组件的父组件',
             ),
              new ItemWidget(
-              title: '样式',
-              describe: '管理应用的主题，使应用能够响应式的适应屏幕尺寸或添加填充。',
+              title: '辅助功能',
+              describe: '给你的App添加辅助功能(这是一个正在进行的工作)',
             ),
           ],
         ));
