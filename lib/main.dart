@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './home.dart';
+import './widgets/BasicsWeigets.dart';
 
 void main() => runApp(new MyApp());
 
@@ -20,11 +21,11 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new Home()
+      home: new Home(),
       // new MyHomePage(title: 'Flutter Demo Home Page'),
-      // routes: <String,WidgetBuilder>{
-      //   'home': (BuildContext context) => new Home()
-      // },
+      routes: <String,WidgetBuilder>{
+        'BasicsWeigets': (BuildContext context) => new BasicsWeigets()
+      },
     );
   }
 }

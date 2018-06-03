@@ -9,7 +9,12 @@ class BasicState extends State<BasicsWeigets> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return  new Container(
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('基础组件'),
+        centerTitle: true,
+      ),
+      body: new Container(
           child: new ListView(
         children: <Widget>[
           new Text(
@@ -96,6 +101,7 @@ class BasicState extends State<BasicsWeigets> {
             ],
           ),
         ],
-      ));
+      )),
+    );
   }
 }
