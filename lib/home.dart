@@ -178,20 +178,28 @@ class ItemWidget extends StatelessWidget {
       child: new Container(
         padding: const EdgeInsets.all(10.0),
         child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Text(
-              '$title',
-              style: new TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold),
+            new Expanded(
+              child: new Text(
+                '$title',
+                textAlign: TextAlign.left,
+                textDirection: TextDirection.ltr,
+                style: new TextStyle(
+                    color: Colors.black,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            new Text(
-              '$describe',
-              style: new TextStyle(
-                  color: Colors.blue,
-                  fontSize: 12.0,
-                  fontWeight: FontWeight.bold),
+            new Expanded(
+              flex: 3,
+              child: new Text(
+                '$describe',
+                style: new TextStyle(
+                    color: Colors.blue,
+                    fontSize: 13.0,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
