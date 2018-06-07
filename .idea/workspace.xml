@@ -3,23 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2b3bb44a-33e3-4f12-9016-f2a8e2ab2501" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/build.gradle" afterPath="$PROJECT_DIR$/android/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/src/main/java/com/demo/flutterapp/MainActivity.java" afterPath="$PROJECT_DIR$/android/app/src/main/java/com/demo/flutterapp/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/android/app/src/main/res/values/styles.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android/gradlew" afterPath="$PROJECT_DIR$/android/gradlew" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/flutter_app.iml" afterPath="$PROJECT_DIR$/flutter_app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" afterPath="$PROJECT_DIR$/ios/Flutter/Debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" afterPath="$PROJECT_DIR$/ios/Flutter/Release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" afterPath="$PROJECT_DIR$/ios/Runner.xcworkspace/contents.xcworkspacedata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/home.dart" afterPath="$PROJECT_DIR$/lib/home.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/main.dart" afterPath="$PROJECT_DIR$/lib/main.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pubspec.lock" afterPath="$PROJECT_DIR$/pubspec.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pubspec.yaml" afterPath="$PROJECT_DIR$/pubspec.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ios/Podfile.lock" afterPath="$PROJECT_DIR$/ios/Podfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/find.dart" afterPath="$PROJECT_DIR$/lib/find.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -42,20 +29,31 @@
               <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <marker date="1528268814198" expanded="true" signature="1824:1833" ph="{...}" />
+                <marker date="1528272570145" expanded="true" signature="2590:3025" ph="{...}" />
+                <marker date="1528272570145" expanded="true" signature="2590:3027" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="find.dart" pinned="false" current-in-tab="true">
+      <file leaf-file-name="find.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/find.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+            <state relative-caret-position="333">
+              <caret line="55" column="3" lean-forward="false" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,7 +78,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="142" />
-    <option name="y" value="53" />
+    <option name="y" value="57" />
     <option name="width" value="1298" />
     <option name="height" value="746" />
   </component>
@@ -222,7 +220,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528270390077" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528338556860" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -270,7 +268,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528270390078" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1528338556861" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -459,7 +457,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="142" y="53" width="1298" height="746" extended-state="1" />
+    <frame x="142" y="57" width="1298" height="746" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -508,7 +506,8 @@
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1528268814198" expanded="true" signature="1824:1833" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3025" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3027" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -519,7 +518,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1528268814198" expanded="true" signature="1824:1833" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3025" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3027" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -538,18 +538,27 @@
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <marker date="1528268814198" expanded="true" signature="1824:1833" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3025" ph="{...}" />
+            <marker date="1528272570145" expanded="true" signature="2590:3027" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/find.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        <state relative-caret-position="333">
+          <caret line="55" column="3" lean-forward="false" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

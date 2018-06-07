@@ -24,15 +24,24 @@ class _State extends State<Find> {
   }
 
   var SharedPreferencesText = '';
-  Future  _saveDate() async {
+  Future _saveDate() async {
     SharedPreferences spf = await SharedPreferences.getInstance();
-    await spf.setString('test', '保存测试数据');
+    await spf.setString('test', '测试数据');
   }
 
   Future _readDate() async {
     SharedPreferences spf = await SharedPreferences.getInstance();
     setState(() {
-      SharedPreferencesText = spf.get('test');
+      SharedPreferencesText = spf.get('test') ?? '暂无数据';
+    });
+  }
+
+  Future _deleteDate() async {
+    SharedPreferences spf = await SharedPreferences.getInstance();
+    setState(() {
+      spf
+          .remove('test')
+          .then((bool s) => SharedPreferencesText = s ? '删除成功' : '删除失败');
     });
   }
 
@@ -134,8 +143,16 @@ class _State extends State<Find> {
                 child: new Text('读取'),
                 onPressed: _readDate,
               ),
+              RaisedButton(
+                child: new Text('删除'),
+                onPressed: _deleteDate,
+              ),
               Text(SharedPreferencesText),
             ],
+          ),
+          Divider(
+            color: Colors.black45,
+            height: 1.0,
           ),
         ],
       ),
