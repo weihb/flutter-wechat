@@ -7,6 +7,8 @@ import 'package:image_picker/image_picker.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:local_notifications/local_notifications.dart';
+
 class Find extends StatefulWidget {
   @override
   _State createState() => new _State();
@@ -23,16 +25,16 @@ class _State extends State<Find> {
     });
   }
 
-  var SharedPreferencesText = '';
-  Future _saveDate() async {
+  String sharedPreferencesText = '';
+  Future _saveDate(values) async {
     SharedPreferences spf = await SharedPreferences.getInstance();
-    await spf.setString('test', '测试数据');
+    await spf.setString('test', values);
   }
 
   Future _readDate() async {
     SharedPreferences spf = await SharedPreferences.getInstance();
     setState(() {
-      SharedPreferencesText = spf.get('test') ?? '暂无数据';
+      sharedPreferencesText = spf.get('test') ?? '暂无数据';
     });
   }
 
@@ -41,7 +43,7 @@ class _State extends State<Find> {
     setState(() {
       spf
           .remove('test')
-          .then((bool s) => SharedPreferencesText = s ? '删除成功' : '删除失败');
+          .then((bool s) => sharedPreferencesText = s ? '删除成功' : '删除失败');
     });
   }
 
@@ -61,6 +63,29 @@ class _State extends State<Find> {
     } on PlatformException catch (e) {
       print(e.toString());
     }
+  }
+
+  static const AndroidNotificationChannel channel =
+      const AndroidNotificationChannel(
+          id: 'default_notification',
+          name: 'Default',
+          description: 'Grant this app the ability to show notifications',
+          importance: AndroidNotificationChannelImportance.HIGH);
+
+  showAndroidNotification() async {
+    await LocalNotifications.createAndroidNotificationChannel(channel: channel);
+    await LocalNotifications.createNotification(
+      title: "F计划",
+      content: "创建通知"+ new DateTime.now().toString(),
+      id: 0,
+      androidSettings: new AndroidSettings(
+        channel: channel,
+        priority:
+            AndroidNotificationPriority.HIGH, // default value for constructor
+        vibratePattern:
+            AndroidVibratePatterns.DEFAULT, // default value for constructor
+      ),
+    );
   }
 
   @override
@@ -137,7 +162,7 @@ class _State extends State<Find> {
             children: <Widget>[
               RaisedButton(
                 child: new Text('保存'),
-                onPressed: _saveDate,
+                onPressed: () => _saveDate('test date'),
               ),
               RaisedButton(
                 child: new Text('读取'),
@@ -147,9 +172,19 @@ class _State extends State<Find> {
                 child: new Text('删除'),
                 onPressed: _deleteDate,
               ),
-              Text(SharedPreferencesText),
+              Text(sharedPreferencesText),
             ],
           ),
+          Divider(
+            color: Colors.black45,
+            height: 1.0,
+          ),
+          GestureDetector(
+              onTap: showAndroidNotification,
+              child: ListTile(
+                leading: Icon(Icons.web),
+                title: Text('Flutter创建通知Notifications'),
+              )),
           Divider(
             color: Colors.black45,
             height: 1.0,
