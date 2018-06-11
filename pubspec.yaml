@@ -16,6 +16,8 @@ dependencies:
   shared_preferences: "^0.4.2"
   # 通知
   local_notifications: "^0.0.6"
+  # 网络请求库
+  dio: "^0.0.14"
 
 dev_dependencies:
   flutter_test:

@@ -9,6 +9,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:local_notifications/local_notifications.dart';
 
+import './http/dioApi.dart';
+
 class Find extends StatefulWidget {
   @override
   _State createState() => new _State();
@@ -76,7 +78,7 @@ class _State extends State<Find> {
     await LocalNotifications.createAndroidNotificationChannel(channel: channel);
     await LocalNotifications.createNotification(
       title: "F计划",
-      content: "创建通知"+ new DateTime.now().toString(),
+      content: "创建通知" + new DateTime.now().toString(),
       id: 0,
       androidSettings: new AndroidSettings(
         channel: channel,
@@ -153,7 +155,6 @@ class _State extends State<Find> {
             height: 1.0,
           ),
           GestureDetector(
-              onTap: getImage,
               child: ListTile(
                 leading: Icon(Icons.data_usage),
                 title: Text('shared_preferences:简单的数据持久化'),
@@ -185,6 +186,37 @@ class _State extends State<Find> {
                 leading: Icon(Icons.web),
                 title: Text('Flutter创建通知Notifications'),
               )),
+          Divider(
+            color: Colors.black45,
+            height: 1.0,
+          ),
+          GestureDetector(
+              child: ListTile(
+                leading: Icon(Icons.http),
+                title: Text('Flutter dio 网络请求'),
+              )),
+          new Row(
+            children: <Widget>[
+              RaisedButton(
+                child: new Text('test1'),
+                onPressed: () => DioApi.get('test1'),
+              ),
+              RaisedButton(
+                child: new Text('test2'),
+                onPressed: () => DioApi.get('test2'),
+              ),
+              RaisedButton(
+                child: new Text('get'),
+                onPressed: (){
+                  DioApi.get('/v2/movie/in_theaters');
+                }
+              ),
+              RaisedButton(
+                child: new Text('post'),
+                onPressed: () => DioApi.get('test4'),
+              ),
+            ],
+          ),
           Divider(
             color: Colors.black45,
             height: 1.0,
