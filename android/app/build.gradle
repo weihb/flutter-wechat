@@ -16,11 +16,10 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 27
-
+    buildToolsVersion '27.0.0'
     lintOptions {
         disable 'InvalidPackage'
     }
-
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.demo.flutterapp"
@@ -30,14 +29,43 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    //签名设置
+    signingConfigs {
+        release {
+            storeFile file("/Users/herbie/Flutter/flutter.jks")
+            storePassword "123456"
+            keyAlias "flutter"
+            keyPassword "123456"
+            //7.0使用的APK Signature Scheme v2签名方案使外部打入渠道信息会修改签名导致没办法安装 所以目前这里我们需要先禁用掉
+            //v2SigningEnabled false
+        }
+        debug {
+            storeFile file("/Users/herbie/Flutter/flutter.jks")
+            storePassword "123456"
+            keyAlias "flutter"
+            keyPassword "123456"
+            //没办法安装 所以目前这里我们需要先禁用掉
+            //v2SigningEnabled false
+        }
+    }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            shrinkResources false
+            signingConfig signingConfigs.release
+            zipAlignEnabled true
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled true
+//            signingConfig signingConfigs.debug
+            buildConfigField "Boolean", "PRINT_LOG", "true"
         }
     }
+    //打包命令  ./gradlew assemblerelease
+
 }
 
 flutter {
@@ -48,4 +76,5 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.android.support:appcompat-v7:27.0.0'
 }
