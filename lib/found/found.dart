@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../me/me.dart';
 
 class Found extends StatefulWidget {
   @override
@@ -28,7 +29,38 @@ class _State extends State<Found> {
         backgroundColor: Color(0xFFebebeb),
         body: Container(
           child: ListView(
-            children: <Widget>[],
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.only(top: 20.0),
+                color: Colors.white,
+                child: new Me().itemWidget(
+                    Icon(
+                      Icons.account_balance_wallet,
+                      color: Colors.blue,
+                    ),
+                    '朋友圈'),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20.0),
+                color: Colors.white,
+                child: new Me().itemWidget(
+                    Icon(
+                      Icons.account_balance_wallet,
+                      color: Colors.blue,
+                    ),
+                    '扫一扫'),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20.0),
+                color: Colors.white,
+                child: new Me().itemWidget(
+                    Icon(
+                      Icons.account_balance_wallet,
+                      color: Colors.blue,
+                    ),
+                    '搜一搜'),
+              ),
+            ],
           ),
         ));
   }
