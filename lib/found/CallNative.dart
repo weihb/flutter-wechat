@@ -9,14 +9,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:local_notifications/local_notifications.dart';
 
-import './http/dioApi.dart';
+import '../http/dioApi.dart';
 
-class Find extends StatefulWidget {
+class CallNative extends StatefulWidget {
   @override
   _State createState() => new _State();
 }
 
-class _State extends State<Find> {
+class _State extends State<CallNative> {
   File _image;
 
   Future getImage() async {
@@ -94,6 +94,10 @@ class _State extends State<Find> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: new AppBar(
+          title: new Center(child: new Text('发现')),
+          centerTitle: true,
+        ),
         body: Container(
       child: ListView(
         children: <Widget>[

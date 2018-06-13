@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import './widgets/BasicsWeigets.dart';
-import './home.dart';
-import './find.dart';
+import './home/home.dart';
+import './found/found.dart';
+import './me/me.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 void main() => runApp(new MyApp());
@@ -13,18 +14,19 @@ class MyApp extends StatefulWidget {
 
 class MainState extends State<MyApp> {
   var _currentIndex = 0;
-  var appBarTitleData = ['Flutter', 'Find', 'My'];
 
   currentPage() {
     switch (_currentIndex) {
       case 0:
-        return new Home();
+        return new Home(
+          title: 'Flutter UI',
+        );
         break;
       case 1:
-        return new Find();
+        return new Found();
         break;
       case 2:
-        return new Center(child: new Text('我的'));
+        return new Me();
         break;
       default:
     }
@@ -34,6 +36,7 @@ class MainState extends State<MyApp> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: new ThemeData(
         // This is the theme of your application.
@@ -58,10 +61,6 @@ class MainState extends State<MyApp> {
             )
       },
       home: new Scaffold(
-        appBar: new AppBar(
-          title: new Center(child: new Text(appBarTitleData[_currentIndex])),
-          centerTitle: true,
-        ),
         bottomNavigationBar: new BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {
