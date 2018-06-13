@@ -15,8 +15,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:icon="@mipmap/icon_app"
-        android:label="F计划">
+        android:icon="@mipmap/wechat"
+        android:label="wechat">
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
