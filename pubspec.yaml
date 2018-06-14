@@ -11,7 +11,7 @@ dependencies:
   # webview组件
   flutter_webview_plugin: "^0.1.6"
   # 图像选择器插件
-  image_picker: "^0.4.4"
+  image_picker: "^0.4.4" 
   # 数据简单持久化
   shared_preferences: "^0.4.2"
   # 通知
@@ -40,7 +40,18 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   assets:
+    - images/ado.png
     - images/ad6.png
+    - images/find_friends.png
+    - images/icon_de_saoyisao.png
+    - images/icon_me_card.png
+    - images/icon_me_collect.png
+    - images/icon_me_money.png
+    - images/icon_me_photo.png
+    - images/icon_me_setting.png
+    - images/icon_me_smail.png
+    - images/apv.png
+    - images/welcome.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

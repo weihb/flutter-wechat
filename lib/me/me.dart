@@ -12,7 +12,7 @@ class Me extends StatelessWidget {
             ),
             Text(
               title,
-              style: TextStyle(fontSize: 14.0, color: Color(0xFF353535)),
+              style: TextStyle(fontSize: 16.0, color: Color(0xFF353535)),
             )
           ],
         ));
@@ -89,9 +89,10 @@ class Me extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: itemWidget(
-                Icon(
-                  Icons.account_balance_wallet,
-                  color: Colors.blue,
+                Image.asset(
+                  'images/icon_me_money.png',
+                  width: 32.0,
+                  height: 32.0,
                 ),
                 '钱包'),
           ),
@@ -101,9 +102,10 @@ class Me extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 itemWidget(
-                    Icon(
-                      Icons.save,
-                      color: Colors.red,
+                    Image.asset(
+                      'images/icon_me_collect.png',
+                      width: 32.0,
+                      height: 32.0,
                     ),
                     '收藏'),
                 Padding(
@@ -114,9 +116,10 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
-                    Icon(
-                      Icons.image,
-                      color: Colors.blue,
+                    Image.asset(
+                      'images/icon_me_photo.png',
+                      width: 32.0,
+                      height: 32.0,
                     ),
                     '相册'),
                 Padding(
@@ -127,9 +130,10 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
-                    Icon(
-                      Icons.view_day,
-                      color: Colors.green,
+                    Image.asset(
+                      'images/icon_me_card.png',
+                      width: 32.0,
+                      height: 32.0,
                     ),
                     '卡包'),
                 Padding(
@@ -140,9 +144,10 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
-                    Icon(
-                      Icons.insert_emoticon,
-                      color: Colors.yellow,
+                    Image.asset(
+                      'images/icon_me_smail.png',
+                      width: 32.0,
+                      height: 32.0,
                     ),
                     '表情'),
               ],
@@ -152,9 +157,10 @@ class Me extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: itemWidget(
-                Icon(
-                  Icons.settings,
-                  color: Colors.blue,
+                Image.asset(
+                  'images/icon_me_setting.png',
+                  width: 32.0,
+                  height: 32.0,
                 ),
                 '设置'),
           ),
