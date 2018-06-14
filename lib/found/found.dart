@@ -11,57 +11,81 @@ class _State extends State<Found> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        appBar: AppBar(
-          title: Text('微信'),
-          backgroundColor: Color(0xff303030),
-          actions: <Widget>[
-            Icon(
-              Icons.search,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 20.0),
-              child: Icon(
-                Icons.add,
-              ),
-            ),
-          ],
-        ),
-        backgroundColor: Color(0xFFebebeb),
         body: Container(
-          child: ListView(
-            children: <Widget>[
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                color: Colors.white,
-                child: new Me().itemWidget(
-                    Icon(
-                      Icons.account_balance_wallet,
-                      color: Colors.blue,
-                    ),
-                    '朋友圈'),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                color: Colors.white,
-                child: new Me().itemWidget(
-                    Icon(
-                      Icons.account_balance_wallet,
-                      color: Colors.blue,
-                    ),
-                    '扫一扫'),
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 20.0),
-                color: Colors.white,
-                child: new Me().itemWidget(
-                    Icon(
-                      Icons.account_balance_wallet,
-                      color: Colors.blue,
-                    ),
-                    '搜一搜'),
-              ),
-            ],
+      child: ListView(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            color: Colors.white,
+            child: new Me().itemWidget(
+                Image.asset(
+                  'images/find_friends.png',
+                  height: 32.0,
+                  width: 32.0,
+                ),
+                '朋友圈'),
           ),
-        ));
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            color: Colors.white,
+            child: new Me().itemWidget(
+                Image.asset(
+                  'images/icon_de_saoyisao.png',
+                  height: 32.0,
+                  width: 32.0,
+                ),
+                '扫一扫'),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            color: Colors.white,
+            child: new Me().itemWidget(
+                Icon(
+                  Icons.search,
+                  color: Colors.red,
+                  size: 32.0,
+                ),
+                '搜一搜'),
+          ),
+          Container(
+              margin: const EdgeInsets.only(top: 20.0),
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                new Me().itemWidget(
+                    Icon(
+                      Icons.shopping_cart,
+                      color: Colors.redAccent,
+                      size: 32.0,
+                    ),
+                    '购物'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: Divider(
+                    height: 0.5,
+                    color: Color(0xFFd9d9d9),
+                  ),
+                ),
+                new Me().itemWidget(
+                    Image.asset(
+                      'images/ahl.png',
+                      width: 32.0,
+                      height: 32.0,
+                    ),
+                    '游戏'),
+              ])),
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            color: Colors.white,
+            child: new Me().itemWidget(
+                Icon(
+                  Icons.link,
+                  color: Colors.blueAccent,
+                  size: 32.0,
+                ),
+                '小程序'),
+          ),
+        ],
+      ),
+    ));
   }
 }

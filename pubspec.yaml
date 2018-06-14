@@ -18,6 +18,10 @@ dependencies:
   local_notifications: "^0.0.6"
   # 网络请求库
   dio: "^0.0.14"
+  # 时间格式化
+  date_format: "^1.0.4"
+  # 带有粘贴标题的列表视图
+  side_header_list_view: "^0.0.3"
 
 dev_dependencies:
   flutter_test:
@@ -40,6 +44,19 @@ flutter:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
   assets:
+    # 4个tab切换图片资源
+    - images/weixin_pressed.png
+    - images/weixin_normal.png
+
+    - images/contact_list_pressed.png
+    - images/contact_list_normal.png
+
+    - images/find_pressed.png
+    - images/find_normal.png
+
+    - images/profile_pressed.png
+    - images/profile_normal.png
+
     - images/ado.png
     - images/ad6.png
     - images/find_friends.png
@@ -51,6 +68,7 @@ flutter:
     - images/icon_me_setting.png
     - images/icon_me_smail.png
     - images/apv.png
+    - images/ahl.png
     - images/welcome.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

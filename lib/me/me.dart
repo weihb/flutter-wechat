@@ -22,22 +22,6 @@ class Me extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text('微信'),
-        backgroundColor: Color(0xff303030),
-        actions: <Widget>[
-          Icon(
-            Icons.search,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0, right: 20.0),
-            child: Icon(
-              Icons.add,
-            ),
-          ),
-        ],
-      ),
-      backgroundColor: Color(0xFFebebeb),
       body: ListView(
         children: <Widget>[
           Container(
@@ -50,7 +34,7 @@ class Me extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(left: 12.0, right: 15.0),
                   child: Image.network(
-                    'http://img3.duitang.com/uploads/item/201511/26/20151126164825_uyPsi.thumb.700_0.jpeg',
+                    'http://img5.duitang.com/uploads/item/201504/17/20150417H5529_JuTGY.jpeg',
                     width: 70.0,
                     height: 70.0,
                   ),
