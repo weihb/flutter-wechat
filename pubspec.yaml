@@ -20,8 +20,6 @@ dependencies:
   dio: "^0.0.14"
   # 时间格式化
   date_format: "^1.0.4"
-  # 带有粘贴标题的列表视图
-  side_header_list_view: "^0.0.3"
 
 dev_dependencies:
   flutter_test:

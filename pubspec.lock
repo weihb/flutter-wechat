@@ -312,13 +312,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.2"
-  side_header_list_view:
-    dependency: "direct main"
-    description:
-      name: side_header_list_view
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.0.3"
   sky_engine:
     dependency: transitive
     description: flutter
