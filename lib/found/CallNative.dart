@@ -61,7 +61,7 @@ class _State extends State<CallNative> {
 
   showWebView(url) async {
     try {
-      await platform.invokeMethod("weiview", {"url": url});
+      await platform.invokeMethod("webview", {"url": url});
     } on PlatformException catch (e) {
       print(e.toString());
     }
@@ -94,139 +94,139 @@ class _State extends State<CallNative> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: new AppBar(
-          title: new Center(child: new Text('发现')),
+        appBar: AppBar(
+          title: new Text('发现'),
           centerTitle: true,
         ),
         body: Container(
-      child: ListView(
-        children: <Widget>[
-          GestureDetector(
-              onTap: () {
-                showToast("我是android系统的toast");
-              },
-              child: ListTile(
-                leading: Icon(Icons.face),
-                title: Text('调用android原生toast'),
-              )),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              onTap: () {
-                showWebView(
-                    'https://www.blackglory.me/straightforward-dart-list/');
-              },
-              child: ListTile(
-                leading: Icon(Icons.favorite),
-                title: Text('学习Dart基础'),
-              )),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/widget');
-              },
-              child: ListTile(
-                leading: Icon(Icons.web),
-                title: Text('Flutter webview插件'),
-              )),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              onTap: getImage,
-              child: ListTile(
-                leading: Icon(Icons.image),
-                title: Text('点击获取设备相册库中的image'),
-              )),
-          Container(
-            margin: _image != null ? const EdgeInsets.only(bottom: 12.0) : null,
-            child: _image != null
-                ? new Image.file(
-                    _image,
-                    width: 70.0,
-                    height: 70.0,
-                  )
-                : null,
-          ),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              child: ListTile(
+          child: ListView(
+            children: <Widget>[
+              GestureDetector(
+                  onTap: () {
+                    showToast("我是android系统的toast");
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.face),
+                    title: Text('调用android原生toast'),
+                  )),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
+              ),
+              GestureDetector(
+                  onTap: () {
+                    showWebView(
+                        'https://www.blackglory.me/straightforward-dart-list/');
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.favorite),
+                    title: Text('学习Dart基础'),
+                  )),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
+              ),
+              GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/widget');
+                  },
+                  child: ListTile(
+                    leading: Icon(Icons.web),
+                    title: Text('Flutter webview插件'),
+                  )),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
+              ),
+              GestureDetector(
+                  onTap: getImage,
+                  child: ListTile(
+                    leading: Icon(Icons.image),
+                    title: Text('点击获取设备相册库中的image'),
+                  )),
+              Container(
+                margin:
+                    _image != null ? const EdgeInsets.only(bottom: 12.0) : null,
+                child: _image != null
+                    ? new Image.file(
+                        _image,
+                        width: 70.0,
+                        height: 70.0,
+                      )
+                    : null,
+              ),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
+              ),
+              GestureDetector(
+                  child: ListTile(
                 leading: Icon(Icons.data_usage),
                 title: Text('shared_preferences:简单的数据持久化'),
               )),
-          Row(
-            children: <Widget>[
-              RaisedButton(
-                child: new Text('保存'),
-                onPressed: () => _saveDate('test date'),
+              Row(
+                children: <Widget>[
+                  RaisedButton(
+                    child: new Text('保存'),
+                    onPressed: () => _saveDate('test date'),
+                  ),
+                  RaisedButton(
+                    child: new Text('读取'),
+                    onPressed: _readDate,
+                  ),
+                  RaisedButton(
+                    child: new Text('删除'),
+                    onPressed: _deleteDate,
+                  ),
+                  Text(sharedPreferencesText),
+                ],
               ),
-              RaisedButton(
-                child: new Text('读取'),
-                onPressed: _readDate,
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
               ),
-              RaisedButton(
-                child: new Text('删除'),
-                onPressed: _deleteDate,
+              GestureDetector(
+                  onTap: showAndroidNotification,
+                  child: ListTile(
+                    leading: Icon(Icons.web),
+                    title: Text('Flutter创建通知Notifications'),
+                  )),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
               ),
-              Text(sharedPreferencesText),
-            ],
-          ),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              onTap: showAndroidNotification,
-              child: ListTile(
-                leading: Icon(Icons.web),
-                title: Text('Flutter创建通知Notifications'),
-              )),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-          GestureDetector(
-              child: ListTile(
+              GestureDetector(
+                  child: ListTile(
                 leading: Icon(Icons.http),
                 title: Text('Flutter dio 网络请求'),
               )),
-          new Row(
-            children: <Widget>[
-              RaisedButton(
-                child: new Text('test1'),
-                onPressed: () => DioApi.get('test1'),
+              new Row(
+                children: <Widget>[
+                  RaisedButton(
+                    child: new Text('test1'),
+                    onPressed: () => DioApi.get('test1'),
+                  ),
+                  RaisedButton(
+                    child: new Text('test2'),
+                    onPressed: () => DioApi.get('test2'),
+                  ),
+                  RaisedButton(
+                      child: new Text('get'),
+                      onPressed: () {
+                        DioApi.get('/v2/movie/in_theaters');
+                      }),
+                  RaisedButton(
+                    child: new Text('post'),
+                    onPressed: () => DioApi.get('test4'),
+                  ),
+                ],
               ),
-              RaisedButton(
-                child: new Text('test2'),
-                onPressed: () => DioApi.get('test2'),
-              ),
-              RaisedButton(
-                child: new Text('get'),
-                onPressed: (){
-                  DioApi.get('/v2/movie/in_theaters');
-                }
-              ),
-              RaisedButton(
-                child: new Text('post'),
-                onPressed: () => DioApi.get('test4'),
+              Divider(
+                color: Colors.black45,
+                height: 1.0,
               ),
             ],
           ),
-          Divider(
-            color: Colors.black45,
-            height: 1.0,
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }

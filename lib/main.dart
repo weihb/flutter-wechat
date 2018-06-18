@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './widgets/BasicsWeigets.dart';
+import './widgets/FlutterUI.dart';
+import './found/CallNative.dart';
 import './home/home.dart';
 import './contacts/contacts.dart';
 import './found/found.dart';
@@ -69,6 +71,8 @@ class MainState extends State<MyApp> {
       theme: mDefaultTheme,
       routes: <String, WidgetBuilder>{
         'BasicsWeigets': (BuildContext context) => new BasicsWeigets(),
+        'flutterUI': (BuildContext context) => new FlutterUI(),
+        'flutterTest': (BuildContext context) => new CallNative(),
         "/widget": (_) => new WebviewScaffold(
               url: "https://flutter.io",
               appBar: new AppBar(

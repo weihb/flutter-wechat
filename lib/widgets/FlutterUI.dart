@@ -14,10 +14,10 @@ class FlutterUIState extends State<FlutterUI> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-        // appBar: new AppBar(
-        //   title: new Center(child: new Text(widget.title)),
-        //   centerTitle: true,
-        // ),
+        appBar: AppBar(
+          title: new Text('Flutter UI'),
+          centerTitle: true,
+        ),
         body: new GridView.count(
           primary: false,
           padding: const EdgeInsets.all(10.0),

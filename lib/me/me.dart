@@ -69,29 +69,38 @@ class Me extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            color: Colors.white,
-            child: itemWidget(
-                Image.asset(
-                  'images/icon_me_money.png',
-                  width: 32.0,
-                  height: 32.0,
-                ),
-                '钱包'),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, 'flutterUI');
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 20.0),
+              color: Colors.white,
+              child: itemWidget(
+                  Image.asset(
+                    'images/icon_me_money.png',
+                    width: 32.0,
+                    height: 32.0,
+                  ),
+                  '钱包'),
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                itemWidget(
-                    Image.asset(
-                      'images/icon_me_collect.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '收藏'),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, 'flutterTest');
+                    },
+                    child: itemWidget(
+                        Image.asset(
+                          'images/icon_me_collect.png',
+                          width: 32.0,
+                          height: 32.0,
+                        ),
+                        '收藏')),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
