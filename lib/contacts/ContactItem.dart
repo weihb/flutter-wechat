@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import './ContactObject.dart';
 
 class ContactItem extends StatelessWidget {
+  final ContactObject item;
+  final String titleName;
+  final String imageName;
+
+  ContactItem({this.item, this.titleName, this.imageName});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -15,15 +22,24 @@ class ContactItem extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Image.network(
-            'http://img5.duitang.com/uploads/item/201504/17/20150417H5529_JuTGY.jpeg',
-            width: 36.0,
-            height: 36.0,
-          ),
+          imageName == null
+              ? Image.network(
+                  item.avatarUrl != ''
+                      ? item.avatarUrl
+                      : 'http://img5.dwstatic.com/lol/1605/327187369677/1463232469572.jpeg',
+                  width: 36.0,
+                  height: 36.0,
+                  scale: 0.9,
+                )
+              : Image.asset(
+                  imageName,
+                  width: 36.0,
+                  height: 36.0,
+                ),
           Container(
             margin: const EdgeInsets.only(left: 12.0),
             child: Text(
-              'Alan',
+              titleName == null ? item.name ?? '暂无' : titleName,
               style: TextStyle(fontSize: 18.0, color: Color(0xFF353535)),
               maxLines: 1,
             ),

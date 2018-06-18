@@ -1,4 +1,4 @@
-name: flutter_app
+name: wechat
 description: A new Flutter application.
 
 dependencies:
@@ -20,6 +20,8 @@ dependencies:
   dio: "^0.0.14"
   # 时间格式化
   date_format: "^1.0.4"
+  # 带有粘贴标题的列表视图，如Android联系人页面
+  side_header_list_view: "^0.0.3"
 
 dev_dependencies:
   flutter_test:
@@ -54,7 +56,11 @@ flutter:
 
     - images/profile_pressed.png
     - images/profile_normal.png
-
+    # 联系人头部icon
+    - images/icon_addfriend.png
+    - images/icon_qunliao.png
+    - images/icon_public.png
+   
     - images/ado.png
     - images/ad6.png
     - images/find_friends.png

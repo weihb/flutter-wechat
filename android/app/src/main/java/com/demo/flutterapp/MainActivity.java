@@ -32,7 +32,7 @@ public class MainActivity extends FlutterActivity {
                       Toast.makeText(MainActivity.this, "toast text must not null", Toast.LENGTH_SHORT).show();
                     }
                     break;
-                  case "weiview":
+                  case "webview":
 //                    Toast.makeText(MainActivity.this,call.argument("url").toString(),Toast.LENGTH_LONG).show();
 //                    startActivity(new Intent(MainActivity.this,BaseWebView.class));
 //                    new BaseWebView(MainActivity.this).loadUrl(call.argument("url").toString());
