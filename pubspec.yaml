@@ -15,7 +15,7 @@ dependencies:
   # 数据简单持久化
   shared_preferences: "^0.4.2"
   # 通知
-  local_notifications: "^0.0.6"
+  flutter_local_notifications: "^0.3.1"
   # 网络请求库
   dio: "^0.0.14"
   # 时间格式化

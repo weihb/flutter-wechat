@@ -7,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:local_notifications/local_notifications.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../http/dioApi.dart';
 
@@ -67,28 +67,6 @@ class _State extends State<CallNative> {
     }
   }
 
-  static const AndroidNotificationChannel channel =
-      const AndroidNotificationChannel(
-          id: 'default_notification',
-          name: 'Default',
-          description: 'Grant this app the ability to show notifications',
-          importance: AndroidNotificationChannelImportance.HIGH);
-
-  showAndroidNotification() async {
-    await LocalNotifications.createAndroidNotificationChannel(channel: channel);
-    await LocalNotifications.createNotification(
-      title: "F计划",
-      content: "创建通知" + new DateTime.now().toString(),
-      id: 0,
-      androidSettings: new AndroidSettings(
-        channel: channel,
-        priority:
-            AndroidNotificationPriority.HIGH, // default value for constructor
-        vibratePattern:
-            AndroidVibratePatterns.DEFAULT, // default value for constructor
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,7 +164,7 @@ class _State extends State<CallNative> {
                 height: 1.0,
               ),
               GestureDetector(
-                  onTap: showAndroidNotification,
+                  onTap: (){showToast('暂时删掉插件了，以后补上');},
                   child: ListTile(
                     leading: Icon(Icons.web),
                     title: Text('Flutter创建通知Notifications'),
