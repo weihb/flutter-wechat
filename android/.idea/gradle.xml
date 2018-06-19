@@ -7,10 +7,10 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="C:/Program Files/flutter_windows_v0.3.2-beta/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.1.6/android" />
-            <option value="C:/Program Files/flutter_windows_v0.3.2-beta/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.4.5/android" />
-            <option value="C:/Program Files/flutter_windows_v0.3.2-beta/flutter/.pub-cache/hosted/pub.dartlang.org/local_notifications-0.0.6/android" />
-            <option value="C:/Program Files/flutter_windows_v0.3.2-beta/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.2/android" />
+            <option value="$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.3.1/android" />
+            <option value="$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_webview_plugin-0.1.6/android" />
+            <option value="$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.4.5/android" />
+            <option value="$USER_HOME$/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.2/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
           </set>

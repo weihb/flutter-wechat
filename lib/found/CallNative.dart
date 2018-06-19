@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../http/dioApi.dart';
+import '../main.dart';
 
 class CallNative extends StatefulWidget {
   @override
@@ -67,13 +68,39 @@ class _State extends State<CallNative> {
     }
   }
 
+  FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+      new FlutterLocalNotificationsPlugin();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var initializationSettingsAndroid =
+        new AndroidInitializationSettings('app_icon');
+    var initializationSettingsIOS = new IOSInitializationSettings();
+    var initializationSettings = new InitializationSettings(
+        initializationSettingsAndroid, initializationSettingsIOS);
+    flutterLocalNotificationsPlugin = new FlutterLocalNotificationsPlugin();
+    flutterLocalNotificationsPlugin.initialize(initializationSettings,
+    selectNotification: onSelectNotification);
+  }
+
+  Future onSelectNotification(String payload) async {
+    if (payload != null) {
+      debugPrint('notification payload: ' + payload);
+    }
+    await Navigator.push(
+      context,
+      new MaterialPageRoute(builder: (context) => MyApp()),
+    );
+}
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: new Text('发现'),
+          title: new Text('知识点'),
           centerTitle: true,
         ),
         body: Container(
@@ -164,7 +191,26 @@ class _State extends State<CallNative> {
                 height: 1.0,
               ),
               GestureDetector(
-                  onTap: (){showToast('暂时删掉插件了，以后补上');},
+                  onTap: () async {
+                    var scheduledNotificationDateTime =
+                        new DateTime.now().add(new Duration(seconds: 5));
+                    var androidPlatformChannelSpecifics =
+                        new AndroidNotificationDetails(
+                            'your other channel id',
+                            'your other channel name',
+                            'your other channel description');
+                    var iOSPlatformChannelSpecifics =
+                        new IOSNotificationDetails();
+                    NotificationDetails platformChannelSpecifics =
+                        new NotificationDetails(androidPlatformChannelSpecifics,
+                            iOSPlatformChannelSpecifics);
+                    await flutterLocalNotificationsPlugin.schedule(
+                        0,
+                        'scheduled title',
+                        'scheduled body',
+                        scheduledNotificationDateTime,
+                        platformChannelSpecifics);
+                  },
                   child: ListTile(
                     leading: Icon(Icons.web),
                     title: Text('Flutter创建通知Notifications'),
