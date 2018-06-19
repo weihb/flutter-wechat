@@ -1,13 +1,10 @@
-# flutter_app
+# flutter_wechat
 
-个人学习Flutter的练习Demo
-==
-
-主要是仿微信来学习
+##主要是仿微信来学习
 
 --------
 
-主要知识点：
+主要知识点：  
 1，flutter ui  
 2，ThemeData  
 3，pubspec.yaml配置  
@@ -17,7 +14,7 @@
 7，微信通讯录列表（在网上和官方库里面没找到能用的，只能自己花时间弄一个）  
 8，flutter调用android原生方法（栗子：toast和webview，本人之前做android，所以ios无能为力）  
 
-下次优化任务：  
+优化任务：  
 UI布局优化添加点击,图片缓存，列表下拉刷新加载更多，二维码扫描，popupWindow效果。
 
 ## Getting Started
