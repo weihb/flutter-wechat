@@ -73,6 +73,7 @@ flutter:
     - images/icon_me_smail.png
     - images/apv.png
     - images/ahl.png
+    - images/as1.jpg
     - images/welcome.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

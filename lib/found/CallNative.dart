@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import '../http/dioApi.dart';
-import '../main.dart';
+import '../app.dart';
 
 class CallNative extends StatefulWidget {
   @override
@@ -91,7 +91,7 @@ class _State extends State<CallNative> {
     }
     await Navigator.push(
       context,
-      new MaterialPageRoute(builder: (context) => MyApp()),
+      new MaterialPageRoute(builder: (context) => App()),
     );
 }
 

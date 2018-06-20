@@ -67,4 +67,18 @@ List<Message> messageData = [
     new DateTime.now(),
     MessageType.CHAT
   ),
+  new Message(
+    'https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=eb3bcb4431c79f3d9becec62dbc8a674/7a899e510fb30f2460a162b8c295d143ad4b0355.jpg',
+    '张之维',
+    '天师府第六十五代天师，十佬，道号天通，“一绝顶，两豪杰”的绝顶，。',
+    new DateTime.now(),
+    MessageType.CHAT
+  ),
+  new Message(
+    'https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=698bc4a5afefce1bfe26c098ce3898bb/838ba61ea8d3fd1fb8502569384e251f95ca5f0c.jpg',
+    '陆瑾',
+    '一百多岁，人称“一生无暇”，三一门唯一幸存者，修炼逆生三重',
+    new DateTime.now(),
+    MessageType.CHAT
+  ),
 ];
