@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../contacts/ContactObject.dart';
+import './ContactObject.dart';
 
 class ContactSiderList extends StatefulWidget {
   final List<ContactObject> items;
   final IndexedWidgetBuilder headerBuilder;
   final IndexedWidgetBuilder itemBuilder;
   final IndexedWidgetBuilder sectionBuilder;
-  final double headerHight;
-  final double itemHight;
-  final double seationHight;
 
   ContactSiderList({
     Key key,
     @required this.items,
-    this.headerHight,
     this.headerBuilder,
     @required this.itemBuilder,
     @required this.sectionBuilder,
-    @required this.itemHight,
-    @required this.seationHight,
   }) : super(key: key);
 
   @override
@@ -33,6 +27,37 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
   Color _pressColor = Colors.transparent; //siderbar背景颜色，默认透明
   bool isShowCenterIndex = true;
   int siderBarIndex = 0;
+
+  // 获取行高，头部高度，seation高度。用于计算listview滑动位置
+  double itemHight;
+  double headerHight;
+  double seationHight;
+  GlobalKey _itemKey = new GlobalKey();
+  GlobalKey _headerKey = new GlobalKey();
+  GlobalKey _seationKey = new GlobalKey();
+  _getItemHight() {
+    //获取item的行高
+    if (_itemKey?.currentContext != null) {
+      itemHight = _itemKey?.currentContext?.size?.height;
+    }
+    return itemHight;
+  }
+
+  _getheaderHight() {
+    //获取header高度
+    if (_headerKey?.currentContext != null) {
+      headerHight = _headerKey?.currentContext?.size?.height;
+    }
+    return headerHight;
+  }
+
+  _getseationHight() {
+    //获取item的行高
+    if (_seationKey?.currentContext != null) {
+      seationHight = _seationKey?.currentContext?.size?.height;
+    }
+    return seationHight;
+  }
 
   final ScrollController _scrollController = new ScrollController();
   bool _onNotification(ScrollNotification notification) {
@@ -56,23 +81,14 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
   }
 
   _isShowHeaderView(index) {
-    if (index == 0 && widget.headerHight != null) {
+    if (index == 0 && widget.headerBuilder != null) {
       return Offstage(
+        key: _headerKey,
         offstage: false,
         child: widget.headerBuilder(context, index),
       );
     }
     return Container();
-  }
-
-  GlobalKey _itemKey = new GlobalKey();
-  double itemHight;
-  _getItemHight() {
-    //获取item的行高
-    if (_itemKey?.currentContext != null) {
-      itemHight = _itemKey?.currentContext?.size?.height;
-    }
-    return itemHight;
   }
 
   @override
@@ -95,6 +111,7 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
                   children: <Widget>[
                     _isShowHeaderView(index),
                     Offstage(
+                      key:  index == 0 ? _seationKey : null,
                       offstage: _shouldShowHeader(index),
                       child: widget.sectionBuilder(context, index),
                     ),
@@ -115,7 +132,7 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
           child: Container(
             alignment: Alignment.center,
             height: MediaQuery.of(context).size.height,
-            width: widget.seationHight,
+            width: 32.0,
             color: _pressColor,
             child: GestureDetector(
               onTapDown: (TapDownDetails t) {
@@ -197,7 +214,7 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
         return -1;
       } else if (widget.items[i].seationKey == siderBarKey[index]) {
         return i;
-      } 
+      }
     }
     return -1;
   }
@@ -244,7 +261,7 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
     int listIndex = this.listScrollToPosition(siderBarIndex);
     if (listIndex == -1) return;
     print('listIndex:$listIndex');
-    //获取该位置前有多少个字母头部Sectionitem
+    //��取该位置前有多少个字母头部Sectionitem
     int sectionSum = 0;
     for (var i = 0; i < listIndex; i++) {
       if (!_shouldShowHeader(i)) {
@@ -253,8 +270,8 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
     }
 
     // 计算jumpTo的具体位置 = 头部的高度+总items的高度+总sectionSum高度
-    double endPosition = (widget.headerHight ?? 0) +
-        (sectionSum * widget.seationHight + listIndex * _getItemHight())
+    double endPosition = (_getheaderHight() ?? 0) +
+        (sectionSum * _getseationHight() + listIndex * _getItemHight())
             .roundToDouble();
     //最终滑动的位置必须小于listview的最大高度
     if (endPosition > _scrollController.position.maxScrollExtent) {

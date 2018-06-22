@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../common/ContactSiderList.dart';
+import './ContactSiderList.dart';
 import './ContactItem.dart';
 import './ContactHeader.dart';
 import './ContactObject.dart';
@@ -11,9 +11,6 @@ class Contacts extends StatefulWidget {
 }
 
 class ContactState extends State<Contacts> {
-  final double headerHight = 156.0;
-  final double seationHight = 32.0;
-  final double itemHight = 52.0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,18 +18,13 @@ class ContactState extends State<Contacts> {
     return Scaffold(
         body: ContactSiderList(
       items: contactData,
-      headerHight: headerHight,
-      seationHight: seationHight,
-      itemHight: itemHight,
       headerBuilder: (BuildContext context, int index) {
         return Container(
-          height: headerHight,
           child: ContactHeader(),
         );
       },
       itemBuilder: (BuildContext context, int index) {
         return Container(
-          height: itemHight,
           color: Colors.white,
           alignment: Alignment.centerLeft,
           child: ContactItem(item:contactData[index]),
@@ -40,7 +32,7 @@ class ContactState extends State<Contacts> {
       },
       sectionBuilder: (BuildContext context, int index) {
         return Container(
-          height: seationHight,
+          height: 32.0,
           padding: const EdgeInsets.only(left: 14.0),
           color: Colors.grey[300],
           alignment: Alignment.centerLeft,
