@@ -2,7 +2,9 @@
 
 ## 主要是仿微信来学习
 
---------
+--------  
+![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/501529654965_.pic.jpg)  
+
 
 主要知识点：  
 1，flutter ui  
