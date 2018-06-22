@@ -3,10 +3,10 @@
 ## 主要是仿微信来学习
 
 --------  
-![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/501529654965_.pic.jpg)
-![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/491529654965_.pic.jpg)
-![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/481529654964_.pic.jpg)
-![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/471529654934_.pic.jpg) 
+![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/501529654965.jpg)
+![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/491529654965.jpg)
+![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/481529654964.jpg)
+![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/471529654934.jpg) 
 
 
 主要知识点：  
