@@ -72,8 +72,13 @@ class MainState extends State<App> {
       appBar: AppBar(
         title: Text('微信'),
         actions: <Widget>[
-          Icon(
-            Icons.search,
+          GestureDetector(
+            onTap: () {
+              // Navigator.pushNamed(context, 'search');
+            },
+            child: Icon(
+              Icons.search,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0, right: 20.0),

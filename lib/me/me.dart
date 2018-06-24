@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import '../common/AndroidToast.dart';
+import '../common/ClickFeedback.dart';
 
 class Me extends StatelessWidget {
-  itemWidget(icon, title) {
-    return FlatButton(
-        padding: const EdgeInsets.all(0.0),
+  itemWidget(context, icon, title) {
+    return ClickFeedback(
         onPressed: () {
           Toast.show(title);
-          // switch (title) {
-          //   case '钱包':
-
-          //     break;
-          //   default:
-          // }
+          switch (title) {
+            case '钱包':
+              Navigator.pushNamed(context, 'flutterUI');
+              break;
+            case '收藏':
+              Navigator.pushNamed(context, 'flutterTest');
+              break;
+            default:
+          }
         },
         child: Container(
             height: 50.0,
@@ -40,7 +43,7 @@ class Me extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             height: 80.0,
-            child: FlatButton(
+            child: ClickFeedback(
               onPressed: () {},
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -84,38 +87,31 @@ class Me extends StatelessWidget {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, 'flutterUI');
-            },
-            child: Container(
-              margin: const EdgeInsets.only(top: 20.0),
-              color: Colors.white,
-              child: itemWidget(
-                  Image.asset(
-                    'images/icon_me_money.png',
-                    width: 32.0,
-                    height: 32.0,
-                  ),
-                  '钱包'),
-            ),
+          Container(
+            margin: const EdgeInsets.only(top: 20.0),
+            color: Colors.white,
+            child: itemWidget(
+                context,
+                Image.asset(
+                  'images/icon_me_money.png',
+                  width: 32.0,
+                  height: 32.0,
+                ),
+                '钱包'),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, 'flutterTest');
-                    },
-                    child: itemWidget(
-                        Image.asset(
-                          'images/icon_me_collect.png',
-                          width: 32.0,
-                          height: 32.0,
-                        ),
-                        '收藏')),
+                itemWidget(
+                    context,
+                    Image.asset(
+                      'images/icon_me_collect.png',
+                      width: 32.0,
+                      height: 32.0,
+                    ),
+                    '收藏'),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
@@ -124,6 +120,7 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
+                    context,
                     Image.asset(
                       'images/icon_me_photo.png',
                       width: 32.0,
@@ -138,6 +135,7 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
+                    context,
                     Image.asset(
                       'images/icon_me_card.png',
                       width: 32.0,
@@ -152,6 +150,7 @@ class Me extends StatelessWidget {
                   ),
                 ),
                 itemWidget(
+                    context,
                     Image.asset(
                       'images/icon_me_smail.png',
                       width: 32.0,
@@ -165,6 +164,7 @@ class Me extends StatelessWidget {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: itemWidget(
+                context,
                 Image.asset(
                   'images/icon_me_setting.png',
                   width: 32.0,

@@ -4,6 +4,7 @@ import './app.dart';
 import './widgets/BasicsWeigets.dart';
 import './widgets/FlutterUI.dart';
 import './found/CallNative.dart';
+import './home/search.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
 /*
@@ -29,16 +30,17 @@ void main() => runApp(MaterialApp(
         'BasicsWeigets': (BuildContext context) => new BasicsWeigets(),
         'flutterUI': (BuildContext context) => new FlutterUI(),
         'flutterTest': (BuildContext context) => new CallNative(),
-        "/widget": (_) => new WebviewScaffold(
+        '/widget': (_) => new WebviewScaffold(
               url: "https://flutter.io",
               appBar: new AppBar(
                 title: new Text("Widget webview"),
               ),
               withZoom: true,
               withLocalStorage: true,
-            )
+            ),
+        'search': (BuildContext context) => new Search(),
       },
-      home: new App(),//new SplashPage(),//启动页
+      home: new App(), //new SplashPage(),//启动页
     ));
 
 final ThemeData mDefaultTheme = new ThemeData(

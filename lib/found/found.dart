@@ -18,6 +18,7 @@ class _State extends State<Found> {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: new Me().itemWidget(
+                context,
                 Image.asset(
                   'images/find_friends.png',
                   height: 32.0,
@@ -29,6 +30,7 @@ class _State extends State<Found> {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: new Me().itemWidget(
+                context,
                 Image.asset(
                   'images/icon_de_saoyisao.png',
                   height: 32.0,
@@ -40,6 +42,7 @@ class _State extends State<Found> {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: new Me().itemWidget(
+                context,
                 Icon(
                   Icons.search,
                   color: Colors.red,
@@ -52,6 +55,7 @@ class _State extends State<Found> {
               color: Colors.white,
               child: Column(children: <Widget>[
                 new Me().itemWidget(
+                    context,
                     Icon(
                       Icons.shopping_cart,
                       color: Colors.redAccent,
@@ -66,6 +70,7 @@ class _State extends State<Found> {
                   ),
                 ),
                 new Me().itemWidget(
+                    context,
                     Image.asset(
                       'images/ahl.png',
                       width: 32.0,
@@ -77,6 +82,7 @@ class _State extends State<Found> {
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: new Me().itemWidget(
+                context,
                 Icon(
                   Icons.link,
                   color: Colors.blueAccent,

@@ -63,12 +63,12 @@ class ClickState extends State<ClickFeedback> {
       //     color = Colors.white;
       //   });
       // },
-      // onHorizontalDragCancel: (){
-      //    print('onHorizontalDragCancel');
-      //    setState(() {
-      //     color = Colors.white;
-      //   });
-      // },
+      onHorizontalDragCancel: (){
+         print('onHorizontalDragCancel');
+         setState(() {
+          color = Colors.transparent;
+        });
+      },
     );
   }
 }
