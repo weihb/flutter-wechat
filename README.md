@@ -11,19 +11,21 @@
 
 主要知识点：  
 * flutter ui, themeData, pubspec.yaml   
+* [state生命周期](https://segmentfault.com/a/1190000015211309?utm_source=tag-newest)   
 * shared_preferences缓存   
 * 网络库dio  
 * Image加载本地图片和网络图片,访问本地相册和相机  
-* [微信通讯录列表（在网上和官方库里面没找到能用的，只能自己花时间弄一个）](https://github.com/weihb/contact_sider_list) 
-* 通过key来获取widget的大小，掌握state的生命周期  
+* [微信通讯录列表（在网上和官方库里面没找到能用的，只能自己花时间弄一个）](https://github.com/weihb/contact_sider_list)   
+* 通过key来获取widget的大小    
 * flutter调用android原生方法（栗子：toast和webview，本人之前做android，所以ios无能为力）  
+* PopupMenu使用  
+* GestureDetector点击效果自定义   
+* 启动页优化  
 
 优化任务：  
 * 列表下拉刷新加载更多  
-* popupWindow效果  
-* 点击效果自定义  
 * 二维码扫描  
-* 启动页优化  
+
 
 ## Getting Started
 

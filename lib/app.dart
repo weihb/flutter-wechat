@@ -3,6 +3,9 @@ import './home/home.dart';
 import './contacts/contacts.dart';
 import './found/found.dart';
 import './me/me.dart';
+import './common/AndroidToast.dart';
+
+enum ItemType { GroupChat, AddFriends, QrCode, Payments, Help }
 
 class App extends StatefulWidget {
   @override
@@ -11,25 +14,55 @@ class App extends StatefulWidget {
 
 class MainState extends State<App> {
   var _currentIndex = 0;
+  Home home;
+  Contacts contacts;
+  Found found;
+  Me me;
 
   currentPage() {
     switch (_currentIndex) {
       case 0:
-        return new Home(
-          title: 'Flutter UI',
-        );
-        break;
+        if (home == null) {
+          home = new Home();
+        }
+        return home;
       case 1:
-        return new Contacts();
-        break;
+        if (contacts == null) {
+          contacts = new Contacts();
+        }
+        return contacts;
       case 2:
-        return new Found();
-        break;
+        if (found == null) {
+          found = new Found();
+        }
+        return found;
       case 3:
-        return new Me();
-        break;
+        if (me == null) {
+          me = new Me();
+        }
+        return me;
       default:
     }
+  }
+
+  _popupMenuItem(String title, IconData icon) {
+    return PopupMenuItem(
+      child: Row(
+        children: <Widget>[
+          Icon(
+            icon,
+            color: Colors.white,
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: Text(
+              title,
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -44,8 +77,22 @@ class MainState extends State<App> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0, right: 20.0),
-            child: Icon(
-              Icons.add,
+            child: GestureDetector(
+              onTap: () {
+                showMenu(
+                  theme: ThemeData(cardColor: Color(0xff393a3f)),
+                  context: context,
+                  position: RelativeRect.fromLTRB(500.0, 76.0, 10.0, 0.0),
+                  items: <PopupMenuEntry>[
+                    _popupMenuItem('发起群聊', Icons.textsms),
+                    _popupMenuItem('添加朋友', Icons.account_box),
+                    _popupMenuItem('扫一扫', Icons.crop_free),
+                    _popupMenuItem('收付款', Icons.crop_rotate),
+                    _popupMenuItem('帮助与反馈', Icons.email),
+                  ],
+                );
+              },
+              child: Icon(Icons.add),
             ),
           ),
         ],

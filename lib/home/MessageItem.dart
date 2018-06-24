@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './Message.dart';
 import 'package:date_format/date_format.dart';
 import '../common/AndroidToast.dart';
+import '../common/ClickFeedback.dart';
 
 class MessageItem extends StatelessWidget {
   final Message message;
@@ -17,8 +18,8 @@ class MessageItem extends StatelessWidget {
       ),
       // color: Colors.white,
       height: 64.0,
-      child: FlatButton(
-        padding: const EdgeInsets.all(0.0),
+      child: ClickFeedback(
+        // padding: const EdgeInsets.all(0.0),
         onPressed: (){
           Toast.show('${message?.title}');
         },
