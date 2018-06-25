@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 class ClickFeedback extends StatefulWidget {
   final Widget child;
   final VoidCallback onPressed;
+  final bool isfeed;
+  final Color background;
   ClickFeedback({
     Key key,
     @required this.child,
     @required this.onPressed,
+    this.isfeed: true,
+    this.background: const Color(0xffd8d8d8),
   }) : super(key: key);
   @override
   ClickState createState() => new ClickState();
@@ -40,9 +44,10 @@ class ClickState extends State<ClickFeedback> {
       //   });
       // },
       onPanDown: (d) {
-        print('onPanDown');
+        // print('onPanDown');
+        if (widget.isfeed == false) return;
         setState(() {
-          color = Color(0xffd8d8d8);
+          color = widget.background;
         });
       },
       // onPanEnd: (d) {
@@ -52,7 +57,7 @@ class ClickState extends State<ClickFeedback> {
       //   print('onPanStart');
       // },
       onPanCancel: () {
-        print('onPanCancel');
+        // print('onPanCancel');
         setState(() {
           color = Colors.transparent;
         });
@@ -63,9 +68,9 @@ class ClickState extends State<ClickFeedback> {
       //     color = Colors.white;
       //   });
       // },
-      onHorizontalDragCancel: (){
-         print('onHorizontalDragCancel');
-         setState(() {
+      onHorizontalDragCancel: () {
+        // print('onHorizontalDragCancel');
+        setState(() {
           color = Colors.transparent;
         });
       },

@@ -1,38 +1,9 @@
 import 'package:flutter/material.dart';
 import '../common/AndroidToast.dart';
 import '../common/ClickFeedback.dart';
+import '../common/wechatItem.dart';
 
 class Me extends StatelessWidget {
-  itemWidget(context, icon, title) {
-    return ClickFeedback(
-        onPressed: () {
-          Toast.show(title);
-          switch (title) {
-            case '钱包':
-              Navigator.pushNamed(context, 'flutterUI');
-              break;
-            case '收藏':
-              Navigator.pushNamed(context, 'flutterTest');
-              break;
-            default:
-          }
-        },
-        child: Container(
-            height: 50.0,
-            child: Row(
-              children: <Widget>[
-                Container(
-                  child: icon,
-                  margin: const EdgeInsets.only(left: 22.0, right: 20.0),
-                ),
-                Text(
-                  title,
-                  style: TextStyle(fontSize: 16.0, color: Color(0xFF353535)),
-                )
-              ],
-            )));
-  }
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -90,28 +61,20 @@ class Me extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
-            child: itemWidget(
-                context,
-                Image.asset(
-                  'images/icon_me_money.png',
-                  width: 32.0,
-                  height: 32.0,
-                ),
-                '钱包'),
+            child: WechatItem(
+              title: '钱包',
+              imagePath: 'images/icon_me_money.png',
+            ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                itemWidget(
-                    context,
-                    Image.asset(
-                      'images/icon_me_collect.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '收藏'),
+                WechatItem(
+                  imagePath: 'images/icon_me_collect.png',
+                  title: '收藏',
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
@@ -119,14 +82,10 @@ class Me extends StatelessWidget {
                     color: Color(0xFFd9d9d9),
                   ),
                 ),
-                itemWidget(
-                    context,
-                    Image.asset(
-                      'images/icon_me_photo.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '相册'),
+                WechatItem(
+                  imagePath: 'images/icon_me_photo.png',
+                  title: '相册',
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
@@ -134,14 +93,10 @@ class Me extends StatelessWidget {
                     color: Color(0xFFd9d9d9),
                   ),
                 ),
-                itemWidget(
-                    context,
-                    Image.asset(
-                      'images/icon_me_card.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '卡包'),
+                WechatItem(
+                  imagePath: 'images/icon_me_card.png',
+                  title: '卡包',
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
@@ -149,28 +104,20 @@ class Me extends StatelessWidget {
                     color: Color(0xFFd9d9d9),
                   ),
                 ),
-                itemWidget(
-                    context,
-                    Image.asset(
-                      'images/icon_me_smail.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '表情'),
+                WechatItem(
+                  imagePath: 'images/icon_me_smail.png',
+                  title: '表情',
+                ),
               ],
             ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
-            child: itemWidget(
-                context,
-                Image.asset(
-                  'images/icon_me_setting.png',
-                  width: 32.0,
-                  height: 32.0,
-                ),
-                '设置'),
+            child: WechatItem(
+              imagePath: 'images/icon_me_setting.png',
+              title: '设置',
+            ),
           ),
         ],
       ),

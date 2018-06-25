@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../common/ClickFeedback.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -6,50 +7,101 @@ class Search extends StatefulWidget {
 }
 
 class SearchState extends State<Search> {
+  FocusNode focusNode = new FocusNode();
+
+  _requestFocus() {
+    FocusScope.of(context).requestFocus(focusNode);
+    return focusNode;
+  }
+
+  _gText(String text) {
+    return ClickFeedback(
+      isfeed: false,
+      onPressed: () {},
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 14.0, color: Color(0xff1aad19)),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
+
     return Scaffold(
-      appBar: AppBar(
-        title: TextField(
-          decoration: const InputDecoration(
-              labelText: '搜索', labelStyle: TextStyle(color: Colors.white)),
-        ),
-        actions: <Widget>[
-          Icon(Icons.mic),
-        ],
-      ),
       body: Container(
+        margin: const EdgeInsets.only(top: 25.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Container(
-              margin: const EdgeInsets.only(top: 50.0),
-              child: Text('搜索指定文章'),
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text('朋友圈'),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border(
-                      left: BorderSide(width: 1.0, color: Color(0xFFd9d9d9)),
-                      right: BorderSide(width: 1.0, color: Color(0xFFd9d9d9)),
+                ClickFeedback(
+                  isfeed: false,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 12.0, right: 10.0),
+                    child: Icon(
+                      Icons.chevron_left,
+                      color: Colors.black,
                     ),
                   ),
-                  child: Text('文章'),
                 ),
-                Text('公众号'),
+                Flexible(
+                  child: TextField(
+                    focusNode: _requestFocus(),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16.0,
+                    ),
+                    onChanged: (String text) {},
+                    decoration: InputDecoration(
+                      hintText: '搜索',
+                      border: UnderlineInputBorder(),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(right: 10.0),
+                  child: Icon(
+                    Icons.mic,
+                    color: Color(0xffaaaaaa),
+                  ),
+                ),
               ],
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Text('小说'),
-                Text('音乐'),
-                Text('表情'),
-              ],
+            Container(
+              margin: const EdgeInsets.only(top: 50.0),
+              child: Text(
+                '搜索指定文章',
+                style: TextStyle(fontSize: 16.0, color: Color(0xffb5b5b5)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  _gText('朋友圈'),
+                  _gText('文章'),
+                  _gText('公众号'),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  _gText('小说'),
+                  _gText('音乐'),
+                  _gText('表情'),
+                ],
+              ),
             ),
           ],
         ),

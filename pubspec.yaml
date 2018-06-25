@@ -75,6 +75,19 @@ flutter:
     - images/ahl.png
     - images/as1.jpg
     - images/welcome.jpg
+    - images/icon_menu_addfriend.png
+    - images/icon_menu_group.png
+    - images/icon_menu_sao.png
+    - images/icon_de_yao.png
+    - images/icon_de_shop.png
+    - images/icon_de_nearby.png
+    - images/icon_de_ping.png
+    - images/v2.png
+    - images/icon_k.png
+    - images/icon_s.png
+    - images/icon_link.png
+    
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

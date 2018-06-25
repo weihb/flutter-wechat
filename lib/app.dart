@@ -45,14 +45,24 @@ class MainState extends State<App> {
     }
   }
 
-  _popupMenuItem(String title, IconData icon) {
+  _popupMenuItem(String title, {String imagePath, IconData icon}) {
     return PopupMenuItem(
       child: Row(
         children: <Widget>[
-          Icon(
-            icon,
-            color: Colors.white,
-          ),
+          imagePath != null
+              ? Image.asset(
+                  imagePath,
+                  width: 32.0,
+                  height: 32.0,
+                )
+              : SizedBox(
+                  height: 32.0,
+                  width: 32.0,
+                  child: Icon(
+                    icon,
+                    color: Colors.white,
+                  ),
+                ),
           Container(
             padding: const EdgeInsets.only(left: 20.0),
             child: Text(
@@ -74,7 +84,7 @@ class MainState extends State<App> {
         actions: <Widget>[
           GestureDetector(
             onTap: () {
-              // Navigator.pushNamed(context, 'search');
+              Navigator.pushNamed(context, 'search');
             },
             child: Icon(
               Icons.search,
@@ -89,11 +99,14 @@ class MainState extends State<App> {
                   context: context,
                   position: RelativeRect.fromLTRB(500.0, 76.0, 10.0, 0.0),
                   items: <PopupMenuEntry>[
-                    _popupMenuItem('发起群聊', Icons.textsms),
-                    _popupMenuItem('添加朋友', Icons.account_box),
-                    _popupMenuItem('扫一扫', Icons.crop_free),
-                    _popupMenuItem('收付款', Icons.crop_rotate),
-                    _popupMenuItem('帮助与反馈', Icons.email),
+                    _popupMenuItem('发起群聊',
+                        imagePath: 'images/icon_menu_group.png'),
+                    _popupMenuItem('添加朋友',
+                        imagePath: 'images/icon_menu_addfriend.png'),
+                    _popupMenuItem('扫一扫',
+                        imagePath: 'images/icon_menu_sao.png'),
+                    _popupMenuItem('收付款', icon: Icons.crop_free),
+                    _popupMenuItem('帮助与反馈', icon: Icons.email),
                   ],
                 );
               },

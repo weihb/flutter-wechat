@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../me/me.dart';
+import '../common/wechatItem.dart';
 
 class Found extends StatefulWidget {
   @override
@@ -17,51 +18,19 @@ class _State extends State<Found> {
           Container(
             margin: const EdgeInsets.only(top: 20.0),
             color: Colors.white,
-            child: new Me().itemWidget(
-                context,
-                Image.asset(
-                  'images/find_friends.png',
-                  height: 32.0,
-                  width: 32.0,
-                ),
-                '朋友圈'),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            color: Colors.white,
-            child: new Me().itemWidget(
-                context,
-                Image.asset(
-                  'images/icon_de_saoyisao.png',
-                  height: 32.0,
-                  width: 32.0,
-                ),
-                '扫一扫'),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            color: Colors.white,
-            child: new Me().itemWidget(
-                context,
-                Icon(
-                  Icons.search,
-                  color: Colors.red,
-                  size: 32.0,
-                ),
-                '搜一搜'),
+            child: WechatItem(
+              imagePath: 'images/v2.png',
+              title: '朋友圈',
+            ),
           ),
           Container(
               margin: const EdgeInsets.only(top: 20.0),
               color: Colors.white,
               child: Column(children: <Widget>[
-                new Me().itemWidget(
-                    context,
-                    Icon(
-                      Icons.shopping_cart,
-                      color: Colors.redAccent,
-                      size: 32.0,
-                    ),
-                    '购物'),
+                WechatItem(
+                  imagePath: 'images/icon_de_saoyisao.png',
+                  title: '扫一扫',
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15.0, right: 15.0),
                   child: Divider(
@@ -69,26 +38,78 @@ class _State extends State<Found> {
                     color: Color(0xFFd9d9d9),
                   ),
                 ),
-                new Me().itemWidget(
-                    context,
-                    Image.asset(
-                      'images/ahl.png',
-                      width: 32.0,
-                      height: 32.0,
-                    ),
-                    '游戏'),
+                WechatItem(
+                  imagePath: 'images/icon_de_yao.png',
+                  title: '摇一摇',
+                ),
               ])),
           Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            color: Colors.white,
-            child: new Me().itemWidget(
-                context,
-                Icon(
-                  Icons.link,
-                  color: Colors.blueAccent,
-                  size: 32.0,
+              margin: const EdgeInsets.only(top: 20.0),
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                WechatItem(
+                  imagePath: 'images/icon_k.png',
+                  title: '看一看',
                 ),
-                '小程序'),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: Divider(
+                    height: 0.5,
+                    color: Color(0xFFd9d9d9),
+                  ),
+                ),
+                WechatItem(
+                  imagePath: 'images/icon_s.png',
+                  title: '搜一搜',
+                ),
+              ])),
+          Container(
+              margin: const EdgeInsets.only(top: 20.0),
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                WechatItem(
+                  imagePath: 'images/icon_de_nearby.png',
+                  title: '附近的人',
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: Divider(
+                    height: 0.5,
+                    color: Color(0xFFd9d9d9),
+                  ),
+                ),
+                WechatItem(
+                  imagePath: 'images/icon_de_ping.png',
+                  title: '漂流瓶',
+                ),
+              ])),
+          Container(
+              margin: const EdgeInsets.only(top: 20.0),
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                WechatItem(
+                  imagePath: 'images/icon_de_shop.png',
+                  title: '购物',
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: Divider(
+                    height: 0.5,
+                    color: Color(0xFFd9d9d9),
+                  ),
+                ),
+                WechatItem(
+                  imagePath: 'images/ahl.png',
+                  title: '游戏',
+                ),
+              ])),
+          Container(
+            margin: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+            color: Colors.white,
+            child: WechatItem(
+              imagePath: 'images/icon_link.png',
+              title: '小程序',
+            ),
           ),
         ],
       ),
