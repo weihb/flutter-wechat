@@ -86,8 +86,20 @@ flutter:
     - images/icon_k.png
     - images/icon_s.png
     - images/icon_link.png
-    
 
+    # widget
+    - images/flutter.png
+    - images/container.png
+    - images/column.png
+    - images/row.png
+    - images/image.png
+    - images/text.png
+    - images/button.png
+    - images/appbar.png
+    - images/scaffold.png
+    - images/md_icon.png
+    
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

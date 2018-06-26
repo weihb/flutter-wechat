@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './splashPage.dart';
+// import './splashPage.dart';
 import './app.dart';
 import './widgets/BasicsWeigets.dart';
 import './widgets/FlutterUI.dart';

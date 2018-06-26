@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../common/ClickFeedback.dart';
 // import './widgets/BasicsWeigets.dart';
 
 class FlutterUI extends StatefulWidget {
@@ -98,8 +99,8 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new GestureDetector(
-      onTap: () {
+    return new ClickFeedback(
+      onPressed: () {
         if (routeName != null) {
           Navigator.pushNamed(context, routeName);
           // Navigator.push(context, new MaterialPageRoute(builder: (context) {

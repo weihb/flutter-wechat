@@ -3,7 +3,7 @@ import './home/home.dart';
 import './contacts/contacts.dart';
 import './found/found.dart';
 import './me/me.dart';
-import './common/AndroidToast.dart';
+// import './common/AndroidToast.dart';
 
 enum ItemType { GroupChat, AddFriends, QrCode, Payments, Help }
 
@@ -95,6 +95,7 @@ class MainState extends State<App> {
             child: GestureDetector(
               onTap: () {
                 showMenu(
+                  //源码中没有theme参数，为了修改背景色，增加了theme
                   theme: ThemeData(cardColor: Color(0xff393a3f)),
                   context: context,
                   position: RelativeRect.fromLTRB(500.0, 76.0, 10.0, 0.0),

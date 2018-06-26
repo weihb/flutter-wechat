@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../common/AndroidToast.dart';
 import '../common/ClickFeedback.dart';
 import '../common/wechatItem.dart';
 

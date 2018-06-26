@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../me/me.dart';
 import '../common/wechatItem.dart';
 
 class Found extends StatefulWidget {
