@@ -95,8 +95,7 @@ class MainState extends State<App> {
             child: GestureDetector(
               onTap: () {
                 showMenu(
-                  //源码中没有theme参数，为了修改背景色，增加了theme
-                  theme: ThemeData(cardColor: Color(0xff393a3f)),
+                  //源码中没有theme参数，在theme中设置cardColor改变背景色
                   context: context,
                   position: RelativeRect.fromLTRB(500.0, 76.0, 10.0, 0.0),
                   items: <PopupMenuEntry>[

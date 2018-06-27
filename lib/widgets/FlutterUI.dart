@@ -34,7 +34,7 @@ class FlutterUIState extends State<FlutterUI> {
             new ItemWidget(
               title: 'Material Components',
               describe: '实现了Material Design 指南的视觉、效果、motion-rich的widget。',
-              routeName: 'A',
+              routeName: 'MaterialWeigets',
             ),
             new ItemWidget(
               title: 'Cupertino(iOS风格的widget)',

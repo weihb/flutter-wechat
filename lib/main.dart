@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 // import './splashPage.dart';
 import './app.dart';
+import './widgets/MaterialWeigets.dart';
 import './widgets/BasicsWeigets.dart';
 import './widgets/FlutterUI.dart';
 import './found/CallNative.dart';
@@ -27,18 +28,18 @@ void main() => runApp(MaterialApp(
       theme: mDefaultTheme,
       routes: <String, WidgetBuilder>{
         'app': (BuildContext context) => new App(),
-        'BasicsWeigets': (BuildContext context) => new BasicsWeigets(),
         'flutterUI': (BuildContext context) => new FlutterUI(),
         'flutterTest': (BuildContext context) => new CallNative(),
         '/widget': (_) => new WebviewScaffold(
-              url: "https://flutter.io",
-              appBar: new AppBar(
-                title: new Text("Widget webview"),
-              ),
-              withZoom: true,
-              withLocalStorage: true,
+            url: "https://flutter.io",
+            appBar: new AppBar(
+              title: new Text("Widget webview"),
             ),
+            withZoom: true,
+            withLocalStorage: true),
         'search': (BuildContext context) => new Search(),
+        'BasicsWeigets': (BuildContext context) => new BasicsWeigets(),
+        'MaterialWeigets': (BuildContext context) => new MaterialWeigets(),
       },
       home: new App(), //new SplashPage(),//启动页
     ));
@@ -54,7 +55,7 @@ final ThemeData mDefaultTheme = new ThemeData(
   // textSelectionColor: //文字选择颜色
   // backgroundColor: //背景颜色
   // canvasColor: //画布颜色
-  // cardColor: //卡片颜色
+  cardColor: Color(0xff393a3f), //卡片颜色
   // buttonColor: //按钮颜色
   // dialogBackgroundColor: //对话框背景颜色
   // disabledColor: //禁用颜色
