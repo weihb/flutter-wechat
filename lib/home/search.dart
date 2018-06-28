@@ -35,8 +35,7 @@ class SearchState extends State<Search> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+            Stack(
               children: <Widget>[
                 ClickFeedback(
                   isfeed: false,
@@ -44,6 +43,7 @@ class SearchState extends State<Search> {
                     Navigator.pop(context);
                   },
                   child: Container(
+                    height: 45.0,
                     margin: const EdgeInsets.only(left: 12.0, right: 10.0),
                     child: Icon(
                       Icons.chevron_left,
@@ -51,25 +51,37 @@ class SearchState extends State<Search> {
                     ),
                   ),
                 ),
-                Flexible(
-                  child: TextField(
-                    focusNode: _requestFocus(),
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 16.0,
-                    ),
-                    onChanged: (String text) {},
-                    decoration: InputDecoration(
-                      hintText: '搜索',
-                      border: UnderlineInputBorder(),
-                    ),
-                  ),
-                ),
                 Container(
-                  margin: const EdgeInsets.only(right: 10.0),
-                  child: Icon(
-                    Icons.mic,
-                    color: Color(0xffaaaaaa),
+                  alignment: Alignment.centerLeft,
+                  height: 45.0,
+                  margin: const EdgeInsets.only(left: 50.0, right: 10.0),
+                  decoration: BoxDecoration(
+                      border: Border(
+                    bottom: BorderSide(width: 1.0, color: Colors.green),
+                  )),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Expanded(
+                        child: TextField(
+                          focusNode: _requestFocus(),
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16.0,
+                          ),
+                          onChanged: (String text) {},
+                          decoration: InputDecoration(
+                              hintText: '搜索', border: InputBorder.none),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(right: 10.0),
+                        child: Icon(
+                          Icons.mic,
+                          color: Color(0xffaaaaaa),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

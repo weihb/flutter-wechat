@@ -19,7 +19,8 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
+    return Card(
+      color: Colors.white,
       margin: const EdgeInsets.all(5.0),
       child: ClickFeedback(
         onPressed: () {
@@ -64,13 +65,13 @@ class ItemWidget extends StatelessWidget {
               ),
             ],
           ),
-          decoration: BoxDecoration(
-              border: Border(
-            top: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
-            left: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
-            right: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
-            bottom: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
-          )),
+          // decoration: BoxDecoration(
+          //     border: Border(
+          //   top: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
+          //   left: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
+          //   right: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
+          //   bottom: BorderSide(width: 1.0, color: Color(0xFFFF9c9c9c)),
+          // )),
         ),
       ),
     );
