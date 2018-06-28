@@ -98,6 +98,40 @@ flutter:
     - images/appbar.png
     - images/scaffold.png
     - images/md_icon.png
+
+    - images/BottomNavigationBar.png
+    - images/Drawer.png
+    - images/MaterialApp.png
+    - images/tabbar.png
+    - images/TabBarView.png
+
+    - images/FlatButton.png
+    - images/FloatingActionButton.png
+    - images/IconButton.png
+    - images/PopupMenuButton.png
+
+    - images/Checkbox.png
+    - images/Radio.png
+    - images/Slider.png
+    - images/Switch.png
+    - images/TextField.png
+    - images/TimePicker.png
+
+    - images/SimpleDialog.png
+    - images/AlertDialog.png
+    - images/BottomSheet.png
+    - images/ExpansionPanel.png
+    - images/SnackBar.png
+
+    - images/Chip.png
+    - images/Tooltip.png
+    - images/DataTable.png
+    - images/Card.png
+    - images/LinearProgressIndicator.png
+
+    - images/ListTile.png
+    - images/Stepper.png
+    - images/Divider.png
     
     
 
