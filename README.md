@@ -8,9 +8,6 @@
 ![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/481529654964.jpg)
 ![loading](https://github.com/weihb/flutter-wechat/raw/master/Screenshots/471529654934.jpg) 
 
-
-主要知识点：  
-* flutter ui, themeData, pubspec.yaml   
 * [state生命周期](https://segmentfault.com/a/1190000015211309?utm_source=tag-newest)   
 * shared_preferences缓存   
 * 网络库dio  
@@ -21,11 +18,6 @@
 * PopupMenu使用  
 * GestureDetector点击效果自定义   
 * 启动页优化  
-
-优化任务：  
-* 列表下拉刷新加载更多  
-* 二维码扫描  
-
 
 ## Getting Started
 
