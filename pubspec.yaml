@@ -9,7 +9,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   # webview组件
-  flutter_webview_plugin: "^0.1.6"
+  flutter_webview_plugin: "^0.2.1+2"
   # 图像选择器插件
   image_picker: "^0.4.4" 
   # 数据简单持久化
@@ -17,7 +17,7 @@ dependencies:
   # 通知
   flutter_local_notifications: "^0.3.1"
   # 网络请求库
-  dio: "^0.0.14"
+  dio: "^1.0.6"
   # 时间格式化
   date_format: "^1.0.4"
   # 带有粘贴标题的列表视图，如Android联系人页面
