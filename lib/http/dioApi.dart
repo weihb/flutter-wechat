@@ -18,7 +18,7 @@ class DioApi {
       "user-agent": "dio",
       "api": "1.0.0"
     },
-    contentType: ContentType.JSON,
+    contentType: ContentType.json,
     responseType: ResponseType.PLAIN
   );
 
