@@ -10,7 +10,6 @@ class SplashPage extends StatefulWidget {
 class _State extends State<SplashPage> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     new Future.delayed(Duration(seconds: 3), () {
       print('启动。。。');
@@ -20,7 +19,6 @@ class _State extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
       child: Image.asset('images/as1.jpg'),
     );

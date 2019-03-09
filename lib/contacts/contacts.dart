@@ -14,7 +14,6 @@ class ContactState extends State<Contacts> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: ContactSiderList(
       items: contactData,

@@ -10,7 +10,6 @@ class BasicState extends State<BasicsWeigets> {
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('基础组件'),

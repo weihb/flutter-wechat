@@ -9,7 +9,6 @@ class MaterialWeigets extends StatefulWidget {
 class _State extends State<MaterialWeigets> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Material Components'),

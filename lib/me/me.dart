@@ -5,7 +5,6 @@ import '../common/wechatItem.dart';
 class Me extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: ListView(
         children: <Widget>[

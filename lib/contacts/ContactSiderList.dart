@@ -93,7 +93,6 @@ class ContactState extends State<ContactSiderList> implements SectionIndexer {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: Stack(
       children: <Widget>[

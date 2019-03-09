@@ -10,7 +10,6 @@ class WechatItem extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return ClickFeedback(
         onPressed: () {
           Toast.show(title);

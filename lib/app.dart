@@ -77,7 +77,6 @@ class MainState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: Text('微信'),

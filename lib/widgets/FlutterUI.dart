@@ -13,7 +13,6 @@ class FlutterUI extends StatefulWidget {
 class FlutterUIState extends State<FlutterUI> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(
           title: new Text('Flutter UI'),
@@ -98,7 +97,6 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new ClickFeedback(
       onPressed: () {
         if (routeName != null) {

@@ -13,7 +13,6 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         body: ListView.builder(
       itemCount: messageData.length,

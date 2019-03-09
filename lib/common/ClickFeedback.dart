@@ -21,7 +21,6 @@ class ClickState extends State<ClickFeedback> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return GestureDetector(
       child: Container(
         color: color,

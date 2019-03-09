@@ -27,8 +27,6 @@ class SearchState extends State<Search> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.only(top: 25.0),

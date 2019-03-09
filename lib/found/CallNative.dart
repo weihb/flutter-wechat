@@ -73,7 +73,6 @@ class _State extends State<CallNative> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     var initializationSettingsAndroid =
         new AndroidInitializationSettings('app_icon');
@@ -97,7 +96,6 @@ class _State extends State<CallNative> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
         appBar: AppBar(
           title: new Text('知识点'),
@@ -228,20 +226,20 @@ class _State extends State<CallNative> {
                 children: <Widget>[
                   RaisedButton(
                     child: new Text('test1'),
-                    onPressed: () => DioApi.get('test1'),
+                    onPressed: () => dio.get('test1'),
                   ),
                   RaisedButton(
                     child: new Text('test2'),
-                    onPressed: () => DioApi.get('test2'),
+                    onPressed: () => dio.get('test2'),
                   ),
                   RaisedButton(
                       child: new Text('get'),
                       onPressed: () {
-                        DioApi.get('/v2/movie/in_theaters');
+                        dio.get('/v2/movie/in_theaters');
                       }),
                   RaisedButton(
                     child: new Text('post'),
-                    onPressed: () => DioApi.get('test4'),
+                    onPressed: () => dio.get('test4'),
                   ),
                 ],
               ),

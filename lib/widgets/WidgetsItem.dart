@@ -18,7 +18,6 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Card(
       color: Colors.white,
       margin: const EdgeInsets.all(5.0),
